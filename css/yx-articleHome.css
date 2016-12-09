@@ -204,7 +204,7 @@ text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-o
 .distrInfo .distrList li .distr_dynamic ul.dynamic_list li{margin-top: 6px;font-size: 12px}
 /*经销商加盟*/
 .dealersJoin .title{height: 20px}
-.dealersJoin .title span{display: inline-block;padding-left: 10px;border-left: 5px solid #eb6100;font-size: 18px;height: 20px;line-height: 20px}
+.dealersJoin .title span{display: inline-block;padding-left: 10px;border-left: 4px solid #eb6100;font-size: 18px;height: 20px;line-height: 20px}
 .dealersJoin .distri_map{border: 1px solid #cccccc}
 .dealersJoin .distri_activity .meauList {overflow: hidden;margin: 10px 0 0 0;}
 .dealersJoin .distri_activity .meauList a{width: 120px;height:39px;font-size: 16px;float: left;line-height:40px;text-align: center;display:block;f font-size: 16px;background: #ffffff;border-bottom: 1px solid #cccccc }
@@ -505,7 +505,6 @@ text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-o
 .carIntro .leftTitleImg{width: 360px;float: left;}
 .carIntro .leftTitleImg a.leftImg{display:block;width: 360px;/*height: 205px;*/float: left;overflow: hidden;}
 .carIntro .leftTitleImg .title{height: 41px;line-height: 41px;background: url(../img/bg_nav_bar.png) repeat-x;margin: 10px 0 19px 0;text-align: center;color: #eb6100;overflow: hidden;}
-.carIntro .leftTitleImg .title marquee{text-align: center;}
 .carIntro .leftTitleImg .title p{line-height: 25px}
 .carIntro .leftTitleImg .title a{color: #eb6100;font-size: 16px;font-weight: 600}
 .carIntro .leftTitleImg .title a:hover{color: #ce5704}
@@ -546,7 +545,8 @@ text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-o
 .findCar .carBrand .selectBradBox .pinpaiBox dl dd,
 .findCar .carBrand .chexiBox dl dd{padding: 0 10px;;cursor: pointer;line-height: 20px}
 .findCar .carBrand .selectBradBox .pinpaiBox dl dd:hover,
-.findCar .carBrand .chexiBox dl dd:hover{color: #eb6100}
+.findCar .carBrand .chexiBox dl dd:hover{background: #eb6100;color: #ffffff}
+.findCar .carBrand .chexiBox dl dd:hover{}
 .findCar .carBrand .chexiBox dl dd span{color: #eb6100}
 
 /*查找车系弹框*/
