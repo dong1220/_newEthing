@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<link rel="shortcut icon" href="/Content/img/favicon.ico" />-->
+    <title>易行网</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="js/ie8-jianrong.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+
+
+    <script>
+        var requestVerificationToken = 'UGMBBXdeAaidrDi76Cg55D54eMdWix92HhQwvbSeYLg2oQyUZA9939DgMBtjmn299hFw5mjsUqrlnDsGvT38hreq9enof3s7WRrmnMVnYrXAQXLe7AZXWMLL1Y7i9r_5TRmyn_asquDhQ7GPJB5L0w2:oEofAbbsYLTQBgzmnJoKC3qBQPZx8eDUEMssO6IbFiiOMxvd5zsbekU0HPQcYVlalXcP7KGb_oxEzQTb5PykpCx5fWdTQZBw-uFNoyO0JRwa2HiB-vS6X8l_N7o0n0oR_5a8Fp3ZApKNnVH7LMPHPqfIUS78LlELInLNIlRry9s1';
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/zx-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/account.css" />
+    <style type="text/css">
+        .newslistimg img {width: 195px;height: 130px; }
+        .right {overflow: hidden;white-space: nowrap;line-height: 30px; }
+        #hotNews img { width: 120px;height: 80px}
+        .search-nr { min-height:350px }
+    </style>
+    <link rel="stylesheet" href="css/search-page.css">
+</head>
+<body>
+<!--顶部-->
+<div class="head">
+    <div class="wrapper">
+        <!--<a class="main_side" href="http://www.ething.net">易行网</a>-->
+        <!--<span class="ml10">您的位置：</span>-->
+        <!--<div class="btn_group">-->
+        <!--<span class="select"></span><i class="icon_xia"></i>-->
+        <!--<div class="city_mark" style="height: auto;">-->
+        <!--<div style="width: 100%; height: 40px; line-height: 40px;">-->
+        <!--<span class="wrap">选择城市：</span>-->
+        <!--<span class="subwrap" style="display: none;"><a href="javascript:" id="cityAll">全国 </a>> </span><span id="subwrap_cityName"></span>-->
+        <!--</div>-->
+        <!--<div style="width: 100%; height: 1px; border-top: 1px solid #ccc;"></div>-->
+        <!--<ul id="cityWrap" class="wrap">-->
+        <!--<li class="active">北京</li>-->
+        <!--</ul>-->
+        <!--<ul class="subwrap" id="subCityWrap" style="display: none;"></ul>-->
+        <!--<script type="text/javascript" src="js/selectCity.js"></script>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <ul class="right">
+            <li><a href="http://sso.ething.net/Home/Login?backurl=http://www.ething.net/news/search?keyword=%E5%A4%A7%E4%BC%97">登录</a></li>
+            <li><a href="http://sso.ething.net/Home/Register?backurl=http://www.ething.net/news/search?keyword=%E5%A4%A7%E4%BC%97">注册</a></li>
+            <script>
+                function logoff() {
+                    $.post('/Home/LogOff', function () {
+                        location.reload();
+                    });
+                }
+            </script>
+
+
+        </ul>
+        <ul class="ml20 nav1">
+            <li><a href="http://maintain.ething.net">易修</a></li>
+            <li></li>
+            <li><a href="http://shop.ething.net">易购</a></li>
+            <li></li>
+            <li><a href="http://club.ething.net">易聚</a></li>
+            <li></li>
+            <li><a href="http://shop.ething.net/Dealer">文章</a></li>
+            <li></li>
+            <li><a href="http://www.ething.net/News/Index">经销商</a></li>
+            <li></li>
+            <li><a href="http://www.ething.net/News/Index">车型库</a></li>
+        </ul>
+
+    </div>
+</div>
+<div class="get_top">
+    <i class="print-top">︿</i>
+    <span>顶部</span>
+</div>
+<div class="dialog-nav">
+    <div class="nr">
+        <i class="dialog-logo"></i>
+        <div>
+            <img src="img/font-dialog.png" />
+        </div>
+        <!--<div>-->
+        <!--<p class="little-font">“经营性ICP”正在申请中</p>-->
+        <!--<p>敬请期待！</p>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--<script>-->
+<!--function showNavDialog() {-->
+<!--$(".dialog-nav").show();-->
+<!--}-->
+<!--$(".dialog-nav").click(function () {-->
+<!--$(".dialog-nav").hide();-->
+<!--});-->
+<!--</script>-->
+
+<!--start 搜索-->
+<div class="search-h">
+    <div class="wrapper">
+        <div class="s-logo">
+            <a href="http://www.ething.net">
+                <img src="img/logo.png" alt="" />
+            </a>
+        </div>
+        <div class="search-form">
+            <input name="txtSearch" type="text" id="txtSearch" value="大众"/>
+            <button name="btnSearch">搜索</button>
+        </div>
+    </div>
+    <div class="wrapper_b">
+        <ul>
+            <li><a href="#">综合</a></li>
+            <li><a href="#">文章</a></li>
+            <li><a href="#">图片</a></li>
+            <li><a href="#" class="active_b">视频</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!--start 搜索内容-->
+<div class="wrapper">
+    <div class="search_video" style="">
+        <p>找到约200个结果</p>
+        <div class="search-nr">
+            <ul class="overflow_h">
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/img_hot_car_1.jpg" width="160" height="100">
+                    </a><p class="title"><a href=""></a><a href="#">BMWi3车主采访:省钱还快你说气 人不！BMWi3车主采访BMWi3车主采访BMWi3车主采访</a></p>
+                    <!--<p><i></i> <span>新能源</span> <span>宝马</span></p>-->
+                    <p>
+                        <span class="fl">2016-8-10  </span>
+                        <span class="fr"><i class="message"></i>评论(12)</span>
+                    </p>
+                    <p class="vedioBox"></p>
+                    <p class="vedioTime">
+                        <span class="fl"><a class="fl"><i class="right_tip"></i></a><span class="fl">123</span></span>
+                        <span class="fr">12:25</span>
+                    </p>
+
+                </li>
+            </ul>
+            <div class="pageCount">
+
+                <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+                <div><a disabled="disabled">首页</a>&nbsp;&nbsp;<a disabled="disabled">上一页</a>&nbsp;&nbsp;<a href='#1' class="active_p">1</a>&nbsp;&nbsp;<a href='#2'>2</a>&nbsp;&nbsp;<a href='#3'>3</a>&nbsp;&nbsp;<a href='#4'>4</a>&nbsp;&nbsp;<a href='#5'>5</a>&nbsp;&nbsp;<a href='#6'>6</a>&nbsp;&nbsp;<a href='#7'>7</a>&nbsp;&nbsp;<a href='#8'>8</a>&nbsp;&nbsp;<a href='#9'>9</a>&nbsp;&nbsp;<a href='#2'>下一页</a>&nbsp;&nbsp;<a href='#9'>尾页</a></div>
+                <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--相关搜素-->
+<div class="middle_m_l_b">
+    <p><i class="vertical_line"></i>相关搜索</p>
+    <div></div>
+    <ul>
+        <li><a href="#">本田</a></li>
+        <li><a href="#">奔驰</a></li>
+        <li><a href="#">标致</a></li>
+        <li><a href="#">宝马</a></li>
+        <li><a href="#">别克</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">宾利</a></li>
+        <li><a href="#">北汽</a></li>
+        <li><a href="#">巴博斯</a></li>
+        <li><a href="#">布加迪</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">比亚迪</a></li>
+        <li><a href="#">保时捷</a></li>
+        <li><a href="#">巴博斯</a></li>
+        <li><a href="#">布加迪</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">北汽幻速</a></li>
+        <li><a href="#">北汽威旺</a></li>
+        <li><a href="#">北汽新能源</a></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+    <div class="xg-search-f">
+        <div class="search-form">
+            <input type="text" name="txtSearch" />
+            <button name="btnSearch">搜索</button>
+        </div>
+    </div>
+</div>
+<!--end 搜索内容-->
+
+<!--<script src="js/common.js"></script>-->
+
+<!--<script>-->
+<!--var urlParame = new UrlSearch();-->
+<!--var keyword = urlParame.keyword;-->
+<!--if (keyword) {-->
+<!--keyword = decodeURI(keyword);-->
+<!--$("input[name='txtSearch']").val(keyword);-->
+<!--}-->
+
+<!--$('button[name="btnSearch"]').click(function() {-->
+<!--var word = $(this).prev().val();-->
+<!--location.href = "/news/search?keyword=" + encodeURI(word);-->
+<!--})-->
+<!--setTimeout("GetRightSiteNews()", 100);-->
+<!--//右边栏的新闻、-->
+<!--function GetRightSiteNews() {-->
+<!--$.ajax({-->
+<!--url: "/News/MoreArticlesByCate",-->
+<!--async: true,-->
+<!--data: { pageNum: 1, pageSize: 4, cateName: "资讯" },-->
+<!--success: function (data) {-->
+<!--$.each(data, function (i, item) {-->
+<!--$("#hotNews").append("<li><a title='" + item.Title + "' href='" + item.GetYiXingArticleUrl + "'><img src='" + item.FocusImageUrl + "'></a></li>")-->
+<!--});-->
+<!--}-->
+<!--});-->
+<!--}-->
+
+
+<!--</script>-->
+
+<div style="width: 100%;margin-top: 35px;background: #f5f5f5;">
+    <div style="margin: 0 auto;width: 1000px;">
+        <ul class="about_us">
+            <li><a href="#">关于易行</a></li>
+            <li><a href="#">加入易行</a></li>
+            <li><a href="#">易行微信</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">在线咨询</a></li>
+            <li><a href="#">服务协议</a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!--底部-->
+<div class="footer mt10">
+    <div class="wrapper">
+        <p>版权所有：北京易行互动科技有限公司 电话：010-85072077 　© 2016 www.ething.net 京ICP证150082号 <i class="icon_gaj"></i> 公网安备 11010802020186号</p>
+    </div>
+</div>
+<!--end 底部-->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?25f7f37b002e89f910a4d08ded191c28";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    var txt=$("#txtSearch").val();
+    console.log(txt);
+</script>
+</body>
+
+</html>

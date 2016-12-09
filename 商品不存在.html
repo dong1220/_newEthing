@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<link rel="shortcut icon" href="/Content/img/favicon.ico" />-->
+    <title>易行网</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="js/ie8-jianrong.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+
+
+    <script>
+        var requestVerificationToken = 'UGMBBXdeAaidrDi76Cg55D54eMdWix92HhQwvbSeYLg2oQyUZA9939DgMBtjmn299hFw5mjsUqrlnDsGvT38hreq9enof3s7WRrmnMVnYrXAQXLe7AZXWMLL1Y7i9r_5TRmyn_asquDhQ7GPJB5L0w2:oEofAbbsYLTQBgzmnJoKC3qBQPZx8eDUEMssO6IbFiiOMxvd5zsbekU0HPQcYVlalXcP7KGb_oxEzQTb5PykpCx5fWdTQZBw-uFNoyO0JRwa2HiB-vS6X8l_N7o0n0oR_5a8Fp3ZApKNnVH7LMPHPqfIUS78LlELInLNIlRry9s1';
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="css/zx-style.css" />
+    <link rel="stylesheet" type="text/css" href="css/account.css" />
+    <style type="text/css">
+        .newslistimg img {width: 195px;height: 130px; }
+        .right {overflow: hidden;white-space: nowrap;line-height: 30px; }
+        #hotNews img { width: 120px;height: 80px}
+        .search-nr { min-height:350px }
+    </style>
+    <link rel="stylesheet" href="css/search-page.css">
+</head>
+<body>
+<!--顶部-->
+<div class="head">
+    <div class="wrapper">
+        <!--<a class="main_side" href="http://www.ething.net">易行网</a>-->
+        <!--<span class="ml10">您的位置：</span>-->
+        <!--<div class="btn_group">-->
+        <!--<span class="select"></span><i class="icon_xia"></i>-->
+        <!--<div class="city_mark" style="height: auto;">-->
+        <!--<div style="width: 100%; height: 40px; line-height: 40px;">-->
+        <!--<span class="wrap">选择城市：</span>-->
+        <!--<span class="subwrap" style="display: none;"><a href="javascript:" id="cityAll">全国 </a>> </span><span id="subwrap_cityName"></span>-->
+        <!--</div>-->
+        <!--<div style="width: 100%; height: 1px; border-top: 1px solid #ccc;"></div>-->
+        <!--<ul id="cityWrap" class="wrap">-->
+        <!--<li class="active">北京</li>-->
+        <!--</ul>-->
+        <!--<ul class="subwrap" id="subCityWrap" style="display: none;"></ul>-->
+        <!--<script type="text/javascript" src="js/selectCity.js"></script>-->
+        <!--</div>-->
+
+        <!--</div>-->
+        <ul class="right">
+            <li><a href="http://sso.ething.net/Home/Login?backurl=http://www.ething.net/news/search?keyword=%E5%A4%A7%E4%BC%97">登录</a></li>
+            <li><a href="http://sso.ething.net/Home/Register?backurl=http://www.ething.net/news/search?keyword=%E5%A4%A7%E4%BC%97">注册</a></li>
+            <script>
+                function logoff() {
+                    $.post('/Home/LogOff', function () {
+                        location.reload();
+                    });
+                }
+            </script>
+
+
+        </ul>
+        <ul class="ml20 nav1">
+            <li><a href="http://maintain.ething.net">易修</a></li>
+            <li></li>
+            <li><a href="http://shop.ething.net">易购</a></li>
+            <li></li>
+            <li><a href="http://club.ething.net">易聚</a></li>
+            <li></li>
+            <li><a href="http://shop.ething.net/Dealer">文章</a></li>
+            <li></li>
+            <li><a href="http://www.ething.net/News/Index">经销商</a></li>
+            <li></li>
+            <li><a href="http://www.ething.net/News/Index">车型库</a></li>
+        </ul>
+
+    </div>
+</div>
+<!--<div class="get_top">-->
+    <!--<i class="print-top">︿</i>-->
+    <!--<span>顶部</span>-->
+<!--</div>-->
+<div class="dialog-nav">
+    <div class="nr">
+        <i class="dialog-logo"></i>
+        <div>
+            <img src="img/font-dialog.png" />
+        </div>
+        <!--<div>-->
+        <!--<p class="little-font">“经营性ICP”正在申请中</p>-->
+        <!--<p>敬请期待！</p>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--<script>-->
+<!--function showNavDialog() {-->
+<!--$(".dialog-nav").show();-->
+<!--}-->
+<!--$(".dialog-nav").click(function () {-->
+<!--$(".dialog-nav").hide();-->
+<!--});-->
+<!--</script>-->
+
+<!--start 搜索-->
+<div class="search-h">
+    <div class="wrapper">
+        <div class="s-logo">
+            <a href="http://www.ething.net">
+                <img src="img/logo.png" alt="" />
+            </a>
+        </div>
+        <div class="search-form">
+            <input name="txtSearch" type="text" id="txtSearch" value="大众"/>
+            <button name="btnSearch">搜索</button>
+        </div>
+    </div>
+    <div class="wrapper_b">
+        <ul>
+            <li><a href="#" class="active_b">综合</a></li>
+            <li><a href="#">文章</a></li>
+            <li><a href="#">图片</a></li>
+            <li><a href="#">视频</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<!--start 搜索内容-->
+<div class="wrapper">
+    <div class="non-existent">
+        <p>抱歉！没找到“<span>大众</span>”的相关内容！</p>
+        <div>
+            <img src="img/no-car.png" alt="">
+        </div>
+        <span>易行网建议您：</span>
+        <ol>
+            <li>1、调整筛选条件重新搜索</li>
+            <li>2、输入车型、品牌或厂商时，使用官方正式名称！</li>
+            <li>3、对搜索结果不满意？<a href="#">告诉我们</a></li>
+        </ol>
+    </div>
+    <div class="wrap-s mt30">
+        <div class="search-nr">
+
+            <ul>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/188">10月巴黎车展首发 新款西雅特Mii官图</a></h1>
+                    <div class="mt10">
+                        <div class="s-nr-img">
+                            <a target="_blank" href="/news/detail/188"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/200b8908401340cfa88420097c0e806b.jpg"/></a>
+                        </div>
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/188">日前，西雅特旗下微型车Mii的改款车型官图被提前泄露，该车与大众up！共享平台打造，在外观设计和动力方面没有大的变化，预计与西雅特新款LEON、新伊比飒共同在10月份举行的巴黎车展上正式亮相。　　新款Mii在外观方面的改动较小，最明显的变化在于采用了...</a>
+                            </p>
+                            <p><span>将上市新车</span><small>2016/8/4</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/138">看热闹看门道！辣评2015热销车:中级车篇</a></h1>
+                    <div class="mt10">
+                        <div class="s-nr-img">
+                            <a target="_blank" href="/news/detail/138"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/28a2cc46433c430d940235e2d3866c0f.jpg"/></a>
+                        </div>
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/138">
+                                    年前（我说的是猴年前）我们进行了一系列的年终热销车盘点，今天我们仍将继续。接下来要为大家奉上的是中级车篇。由于中级车的数量有限，所以我们这里就将自主和合资中级车混在一起盘点。但是从销量前十的榜单中来看，前十名清一色的全是合资车型...</a>
+                            </p>
+                            <p><span>导购</span><small>2016/8/1</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/2635">重磅！大众汽车集团战略注资首汽Gofun出行</a></h1>
+                    <div class="mt10">
+                        <div class="s-nr-img">
+                            <a target="_blank" href="/news/detail/2635"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/84a4e1100e364c42bcb121813d061e03.jpg"/></a>
+                        </div>
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/2635">1月17日上午，首汽Gofun出行与大众汽车集团(中国)战略合作签约仪式在广州威斯汀酒店隆重举行。大众汽车集团管理董事会成员、大众汽车集团(中国)总裁兼CEO海兹曼教授，大众汽车集团执行副总裁、大众汽车集团(中国)董事兼执行副总裁苏伟铭;首旅集团副总...</a>
+                            </p>
+                            <p><span>行业动态</span><small>2016/11/17</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/217">车主评全新爱丽舍 综合表现获得一致肯定</a></h1>
+                    <div class="mt10">
+                        <!--<div class="s-nr-img">-->
+                        <!--<a target="_blank" href="/news/detail/217"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/28dfec94b07f403d866487c044586e58.png"/></a>-->
+                        <!--</div>-->
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/217">               多年以来，爱丽舍、捷达以及桑塔纳这三位老对手一直是国内紧凑级家用车市场的常青树，较高的性价比以及优秀的耐用性让它们一直活跃在市场中。现如今这三款已经陆续进行了换代，但与后两者不同，全新爱丽舍上市后的表现显然比前两者更加抢...</a>
+                            </p>
+                            <p><span>车主访谈</span><small>2016/8/4</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/96">年内发布 大众新中型SUV或定名Teramont</a></h1>
+                    <div class="mt10">
+                        <!--<div class="s-nr-img">-->
+                        <!--<a target="_blank" href="/news/detail/96"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/d88a5366472f41829c0033bdd7305d9e.jpg"/></a>-->
+                        <!--</div>-->
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/96">　   近日海外媒体报道，大众品牌全新中型SUV可能定名为“Teramont”，根据之前消息，新车将于2016年内发布。　　据了解，Teramont的名称注册于2016年6月，据大众高层向海外媒体介绍，未来全新中型SUV的命名会更容易发音，帮助产品更...</a>
+                            </p>
+                            <p><span>将上市新车</span><small>2016/8/1</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/201">345马力？全新途锐或在2017年4月发布</a></h1>
+                    <div class="mt10">
+                        <!--<div class="s-nr-img">-->
+                        <!--<a target="_blank" href="/news/detail/201"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/c5d92341d34b427d9c655d2b630abe44.jpg"/></a>-->
+                        <!--</div>-->
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/201">   日前，外媒报道称大众第三代途锐将会在2017年4月开幕的上海车展上正式发布，此前大众已经在今年的北京车展上推出了该车的设计雏形——T-Prime GTE概念车。据悉，全新途锐将搭载345马力的汽油发动机。『T-Prime GTE概念车』　　T-...</a>
+                            </p>
+                            <p><span>将上市新车</span><small>2016/8/4</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h1><a target="_blank" href="/news/detail/165">《单挑》明锐VS朗逸 大众内部的大乱斗</a></h1>
+                    <div class="mt10">
+                        <div class="s-nr-img">
+                            <a target="_blank" href="/news/detail/165"><img src="http://ethingnewsfocusimg.oss-cn-qingdao.aliyuncs.com/164e798972dc43708feeaac90c3ad510.png"/></a>
+                        </div>
+                        <div class="s-nr-detail">
+                            <p>
+                                <a target="_blank" href="/news/detail/165">       前阵子上映的好莱坞科幻大片《美国队长3》，讲述的是“复联”由于政治问题分裂成两派，因而他们也进行了一场内部厮杀。这样的场景，如今在汽车市场中又得以“重演”。大众旗下的紧凑型家用三厢车明锐和朗逸一直以来广受好评，价格亲民、配置实用、空间宽...</a>
+                            </p>
+                            <p><span>车型对比</span><small>2016/8/3</small></p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <h1 class="popular"><a target="_blank" href="#">热门推荐</a></h1>
+            <ul class="overflow_h overflow_brand">
+                <li>
+                    <a href="">
+                        <img src="img/search-brand.png" width="124" height="64">
+                    </a>
+                    <p class="title">
+                        <a href="#" >速腾</a>
+                        <span>9.54-18.50万</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/search-brand.png" width="124" height="64">
+                    </a>
+                    <p class="title">
+                        <a href="#" >速腾</a>
+                        <span>9.54-18.50万</span>
+                    </p>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/search-brand.png" width="124" height="64">
+                    </a>
+                    <p class="title">
+                        <a href="#" >速腾</a>
+                        <span>9.54-18.50万</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+                <li>
+                    <p class="title title_b">
+                        <a href="#" >速腾</a>
+                        <span>指导价：<span>9.54-18.50万</span></span>
+                    </p>
+                </li>
+            </ul>
+            <p class="view_more"><a href="">查看更多品牌>></a></p>
+
+            <div class="pageCount">
+
+                <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+                <div><a disabled="disabled">首页</a>&nbsp;&nbsp;<a disabled="disabled">上一页</a>&nbsp;&nbsp;<a href='#1' class="active_p">1</a>&nbsp;&nbsp;<a href='#2'>2</a>&nbsp;&nbsp;<a href='#3'>3</a>&nbsp;&nbsp;<a href='#4'>4</a>&nbsp;&nbsp;<a href='#5'>5</a>&nbsp;&nbsp;<a href='#6'>6</a>&nbsp;&nbsp;<a href='#7'>7</a>&nbsp;&nbsp;<a href='#8'>8</a>&nbsp;&nbsp;<a href='#9'>9</a>&nbsp;&nbsp;<a href='#2'>下一页</a>&nbsp;&nbsp;<a href='#9'>尾页</a></div>
+                <!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--相关搜素-->
+<div class="middle_m_l_b">
+    <p><i class="vertical_line"></i>相关搜索</p>
+    <div></div>
+    <ul>
+        <li><a href="#">本田</a></li>
+        <li><a href="#">奔驰</a></li>
+        <li><a href="#">标致</a></li>
+        <li><a href="#">宝马</a></li>
+        <li><a href="#">别克</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">宾利</a></li>
+        <li><a href="#">北汽</a></li>
+        <li><a href="#">巴博斯</a></li>
+        <li><a href="#">布加迪</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">比亚迪</a></li>
+        <li><a href="#">保时捷</a></li>
+        <li><a href="#">巴博斯</a></li>
+        <li><a href="#">布加迪</a></li>
+        <li><a href="#">北汽绅宝</a></li>
+        <li><a href="#">北汽幻速</a></li>
+        <li><a href="#">北汽威旺</a></li>
+        <li><a href="#">北汽新能源</a></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+    <div class="xg-search-f">
+        <div class="search-form">
+            <input type="text" name="txtSearch" />
+            <button name="btnSearch">搜索</button>
+        </div>
+    </div>
+</div>
+
+<!--<script src="js/common.js"></script>-->
+
+<!--<script>-->
+<!--var urlParame = new UrlSearch();-->
+<!--var keyword = urlParame.keyword;-->
+<!--if (keyword) {-->
+<!--keyword = decodeURI(keyword);-->
+<!--$("input[name='txtSearch']").val(keyword);-->
+<!--}-->
+
+<!--$('button[name="btnSearch"]').click(function() {-->
+<!--var word = $(this).prev().val();-->
+<!--location.href = "/news/search?keyword=" + encodeURI(word);-->
+<!--})-->
+<!--setTimeout("GetRightSiteNews()", 100);-->
+<!--//右边栏的新闻、-->
+<!--function GetRightSiteNews() {-->
+<!--$.ajax({-->
+<!--url: "/News/MoreArticlesByCate",-->
+<!--async: true,-->
+<!--data: { pageNum: 1, pageSize: 4, cateName: "资讯" },-->
+<!--success: function (data) {-->
+<!--$.each(data, function (i, item) {-->
+<!--$("#hotNews").append("<li><a title='" + item.Title + "' href='" + item.GetYiXingArticleUrl + "'><img src='" + item.FocusImageUrl + "'></a></li>")-->
+<!--});-->
+<!--}-->
+<!--});-->
+<!--}-->
+
+
+<!--</script>-->
+
+<div >
+    <div>
+        <ul class="about_us">
+            <li><a href="#">关于易行</a></li>
+            <li><a href="#">加入易行</a></li>
+            <li><a href="#">易行微信</a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="#">在线咨询</a></li>
+            <li><a href="#">服务协议</a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+<!--底部-->
+<div class="footer mt10">
+    <div class="wrapper">
+        <p>版权所有：北京易行互动科技有限公司 电话：010-85072077 　© 2016 www.ething.net 京ICP证150082号 <i class="icon_gaj"></i> 公网安备 11010802020186号</p>
+    </div>
+</div>
+<!--end 底部-->
+
+<!--<script>-->
+    <!--var _hmt = _hmt || [];-->
+    <!--(function () {-->
+        <!--var hm = document.createElement("script");-->
+        <!--hm.src = "//hm.baidu.com/hm.js?25f7f37b002e89f910a4d08ded191c28";-->
+        <!--var s = document.getElementsByTagName("script")[0];-->
+        <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+<!--</script>-->
+<script>
+    var txt=$("#txtSearch").val();
+    console.log(txt);
+</script>
+</body>
+
+</html>

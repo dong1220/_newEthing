@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*弹框
+2016.11.17
+by dongxiao
+*/
+/*汽车详情页预约试驾弹框*/
+.fullMask{width: 100%;height: 100%;background: url(../img/P_bg.png) repeat;z-index:101;position: fixed;top: 0;left:0;display: none }
+.order_drive {background: #ffffff;z-index: 102;width: 620px;position: fixed;top: 50%;left: 50%;margin-left: -310px;margin-top: -308px;max-height: 710px;overflow-y:auto }
+.order_drive h3{font-size: 24px;text-align: center;padding: 20px 0;border-bottom: 1px solid #eb6100}
+.order_drive .inputBox{margin:10px 0 0 60px;overflow: hidden;color: #666666}
+.order_drive .inputBox span{display: inline-block;font-size: 14px}
+.order_drive .inputBox span.bixuan{color: #eb6100;font-size: 18px;font-weight: 600;margin-right: 10px}
+.order_drive .inputBox select,
+.order_drive .inputBox input,
+.order_drive .inputBox textarea{line-height: 25px;border:1px solid #cccccc;height: 22px;width: 300px;outline: none;padding-left: 5px}
+.order_drive .inputBox select.city{width: 141px;margin-right: 10px}
+.order_drive .inputBox span.dealer{letter-spacing: 6px}
+.order_drive .inputBox span.three{padding-left: 7px}
+.order_drive .inputBox span.three font{color: #eb6100}
+.order_drive .dealer_list {width: 500px;max-height: 194px;overflow-y:auto;border:1px solid #cccccc;padding:10px 0;}
+.order_drive .dealer_list ul {margin-left: -10px;}
+.order_drive .dealer_list ul li{width: 220px;float: left;font-size: 12px;padding:0;border:none;margin-left: 20px}
+.order_drive .dealer_list ul li input[type="checkbox"]{display: block;width: 13px;height: 13px;margin-right: 5px}
+.order_drive .btnSubmit{background: #eb6100;width: 280px;height: 40px;line-height: 40px;color: #ffffff;margin:20px 170px;font-size: 18px;outline: none}
+.order_drive .btnSubmit:hover{background: #ce5704}
+.order_drive .close_box a{display:block;position: absolute;top: 10px;right: 10px;color: #666;font-family: 'Glyphicons Halflings';font-size: 18px}
+.order_drive .close_box a:hover{color: #000}
+.order_drive .close_box .icon_close:before{content: "\e088";}
+
+/*汽车详情页团购通知弹框*/
+.groupGo{background: #ffffff;margin-top: -214px}
+.groupGo .group_times{color: #999999;text-align: center;margin: 20px 0 20px}
+.groupGo .group_times span{color: #eb6100}
+.groupGo .inputBox{margin: 10px 0 0 110px}
+.groupGo .noticeTimesBox{margin-left: 54px}
+.groupGo .noticeTimesBox li{cursor: pointer;width: 68px;height: 20px;text-align: center;border:1px solid #cccccc;float: left;margin-right: 9px;position: relative;}
+.groupGo .noticeTimesBox li:hover,.groupGo .noticeTimesBox li.active{border-color: #eb6100}
+.groupGo .noticeTimesBox li.active{border-color: #eb6100}
+.groupGo .noticeTimesBox li.active .slected{position: absolute;bottom: 0;right: 0;width: 14px;height: 14px;background: url(../img/icon_slected.png) no-repeat;}
+
+/*汽车详情页团购通知弹框*/
+.feedbackBox{width: 500px;height: 380px;margin-left: -250px;margin-top: -190px}
+.feedbackBox .inputBox input,.feedbackBox .inputBox textarea{width: 248px}
+.feedbackBox .inputBox textarea{height: 120px;resize: none}
+.feedbackBox  .btnSubmit{width: 210px;margin:30px 0 0 151px;}

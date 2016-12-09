@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>车型库图片展示</title>
+    <!-- 兼容IE浏览器-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 高速浏览模式-->
+    <meta name="renderer" content="webkit">
+    <!-- 移动设计优先（响应式）-->
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/car_pic.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--
+        IE8版本之前的（6，7，8）不支持HTML5的新标签和css3的媒体查询
+        *html5shiv.min.js
+            专门兼容IE6/7/8版本的HTML5新标签
+        *respond.min.js
+            专门兼容IE6/7/8版本的CSS3提供的媒体查询
+    -->
+    <!--[if lt IE 9]>
+    <!--<script src="BOOTSTRAP/js/html5shiv.min.js"></script>-->
+    <!--<script src="BOOTSTRAP/js/respond.min.js"></script>-->
+    <![endif]-->
+    <script type="text/javascript">
+        $(function(){
+            var pos = $('.div2 ul').position().left;
+            $('.lf').click(function(){
+                if($('.div2 .active').index('.div2 li')>0){
+                    pos = pos+825;
+                    $('.div2 .active').prev('li').addClass('active').siblings().removeClass('active');
+                    $('.div2 ul').animate({'left':pos+'px'});
+                    $('.lf').animate({'width':'20px'})
+                }else{
+                    alert('已经第一张了');
+                }
+
+
+            })
+            $('.rg').click(function(){
+                if($('.div2 .active').index('.div2 li')<4){
+                    pos = pos-825;
+                    $('.div2 .active').next('li').addClass('active').siblings().removeClass('active');
+                    $('.div2 ul').animate({'left':pos+'px'});
+                    $('.rg').animate({'width':'20px'})
+                }else{
+                    alert('最后一张了')
+                }
+
+            })
+
+
+            $('.lf').hover(function(){
+                var posit = $('.div2 ul').position().left+20;
+                $('.div2 ul').animate({'left':posit+'px'});
+                $(this).animate({'width':'40px'})
+            },function(){
+                var posit = pos;
+                $('.div2 ul').animate({'left':posit+'px'});
+                $(this).animate({'width':'20px'})
+            })
+            $('.rg').hover(function(){
+                var posit = $('.div2 ul').position().left-20;
+                $('.div2 ul').animate({'left':posit+'px'});
+                $(this).animate({'width':'40px'})
+            },function(){
+                var posit = pos;
+                $('.div2 ul').animate({'left':posit+'px'});
+                $(this).animate({'width':'20px'})
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+        <!--头部-->
+        <div class="head">
+            <!--导航栏-->
+            <nav class="head_bar" role="navigation">
+                <div>
+                    <ul class="head_nav">
+                        <li class="s_lf_1">你的位置:</li>
+                        <li><a href="#">车型库</a></li>
+                        <li>&gt;</li>
+                        <li><a href="#">图片</a></li>
+                        <li>&gt;</li>
+                        <li><a href="#">本田</a></li>
+                        <li>&gt;</li>
+                        <li><a href="#">雅阁</a></li>
+                        <li>&gt;</li>
+                        <li class="dropdown car_edition">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版
+                                <i class="car_pic_list"></i>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#">2016款&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="car_pic_list"></i></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>&gt;</li>
+                        <li><a href="#">外观</a></li>
+                    </ul>
+                </div>
+                <div class="head_rg">
+                    <ul class="head_nav">
+                        <li class="s_lf"><a href="#">雅阁频道</a></li>
+                        <li class="s_lf">|</li>
+                        <li class="s_lf"><a href="#">报价</a></li>
+                        <li class="s_lf"><a href="#">视频</a></li>
+                        <li class="s_lf"><a href="#">文章</a></li>
+                        <li class="s_rg s_lf"><a href="#">参数配置</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--主体-->
+        <div class="middle">
+            <div class="lf_pic">
+                <div class="div1">
+                    <div class="lf"></div>
+                    <div class="rg"></div>
+                    <div class="div2">
+                        <ul>
+                            <li><img src="img/car_show_1.png" ></li>
+                            <li class="active"><img src="img/car_show_1.png" ></li>
+                            <li><img src="img/car_show_1.png" ></li>
+                            <li><img src="img/car_show_1.png" ></li>
+                            <li><img src="img/car_show_1.png" ></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lit_lable">
+                    <a href="#">列表模式</a>
+                </div>
+            </div>
+            <div class="rg_word">
+                <div style="overflow: hidden;margin-top: 15px;margin-bottom: 15px;">
+                    <b></b>
+                    <b>按分类看图</b>
+                </div>
+                <ul class="nav">
+                    <li><a href="#"><i class="dot"></i>外观(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>内饰(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>空间(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>细节(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>图解(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>评测(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>相关(531张)</a></li>
+                    <li><a href="#"><i class="dot"></i>车展(531张)</a></li>
+                </ul>
+                <div class="one_line"></div>
+                <div class="car_type">2016款&nbsp;&nbsp;混动&nbsp;2.0L&nbsp;锐尊版</div>
+                <div class="car_price">参考成交价：<span>24.68万</span></div>
+                <div style="text-align: center;">
+                    <span class="car_label">预约试驾</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>

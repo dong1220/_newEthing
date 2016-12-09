@@ -1,0 +1,115 @@
+
+.to_r  .dashed_right{
+	animation-name: line_to_right;
+	animation-duration:5s;
+}
+.car-cont-groom1 li:hover a:after,
+.caption li a:hover:after,
+.cont_caption li span a:hover:after,
+.tou ul li a:hover:after,.host_car .left div a:hover:after,
+.yx_info .title li:hover a:after,.cx_d_table tbody td a:hover:after,
+.cx_d_list .tip li:hover a:after,.car_d_info .cap li a:hover:after,
+.love_car_list3 .player li:hover a:after,
+.love_car_list3 ul.date_info li:hover a:after,
+.shop_d_title1 li:hover a:after,
+.cont-pj .title li:hover a:after,
+.table-title th >ul li a:hover:after{
+	display: block;
+	animation-name: right_move_center;
+	animation-duration:1s;
+}
+.car-cont-groom1 li:hover a:before,
+.caption li a:hover:before, 
+.cont_caption li span a:hover:before,
+.tou ul li a:hover:before,.host_car .left div a:hover:before,
+.yx_info .title li:hover a:before,.cx_d_table tbody td a:hover:before,
+.cx_d_list .tip li:hover a:before,.car_d_info .cap li a:hover:before,
+.love_car_list3 .player li:hover a:before,
+.love_car_list3 ul.date_info li:hover a:before,
+.shop_d_title1 li:hover a:before,
+.cont-pj .title li:hover a:before,
+.table-title th >ul li a:hover:before{
+	display: block;
+	animation-name: left_move_center;
+	animation-duration:1s;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes line_to_right
+{
+from {left:120px}
+to {left:960px}
+}
+
+@-moz-keyframes line_to_right /* Firefox */
+{
+from {left:120px}
+to {left:960px}
+}
+
+@-webkit-keyframes line_to_right /* Safari 和 Chrome */
+{
+from {left:120px}
+to {left:960px}
+}
+
+@-o-keyframes line_to_right /* Opera */
+{
+from {left:120px}
+to {left:960px}
+}
+/*mousemove特效*/
+@keyframes left_move_center
+{
+from {left:-15px}
+to {left:-9px}
+}
+
+@-moz-keyframes left_move_center /* Firefox */
+{
+from {left:-15px}
+to {left:-9px}
+}
+
+@-webkit-keyframes left_move_center /* Safari 和 Chrome */
+{
+from {left:-15px}
+to {left:-9px}
+}
+
+@-o-keyframes left_move_center /* Opera */
+{
+from {left:-15px}
+to {left:-9px}
+}
+@keyframes right_move_center
+{
+from {right:-15px}
+to {right:-9px}
+}
+
+@-moz-keyframes right_move_center /* Firefox */
+{
+from {right:-15px}
+to {right:-9px}
+}
+
+@-webkit-keyframes right_move_center /* Safari 和 Chrome */
+{
+from {right:-15px}
+to {right:-9px}
+}
+
+@-o-keyframes right_move_center /* Opera */
+{
+from {right:-15px}
+to {right:-9px}
+}

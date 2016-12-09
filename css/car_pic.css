@@ -1,0 +1,427 @@
+body {
+    background: #111;
+    font: 12px "微软雅黑";
+    color: #666;
+    height: 725px;
+}
+
+/*头部*/
+.head_bar .head_nav > li > a:hover
+/*, .head_bar .head_nav > li > a:focus */
+{
+    color: #EB6100;
+    text-decoration: none;
+}
+.head_bar .head_nav > li > a:focus{
+    text-decoration: none;
+}
+.container {
+    width: 1000px;
+    padding: 0;
+}
+
+.head_bar {
+    min-height: 0;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #3c3b39;
+}
+
+.head_bar .head_nav > li > a {
+    padding: 0;
+    line-height: normal;
+    color: #999;
+}
+
+.head_nav li {
+    padding: 9px 1px;
+    float: left
+}
+
+.head_nav {
+    list-style: none;
+    padding: 0;
+}
+
+.s_lf_1 {
+    margin-left: 13px;
+    color: #999;
+}
+
+.s_lf {
+    margin-left: 5px;
+}
+
+.s_rg {
+    margin-right: 26px;
+}
+
+.head_rg {
+    float: right
+}
+.car_pic_list{
+    display: inline-block;
+    margin-left: 5px;
+    border-top: 6px solid #999;
+    border-left: 4px solid transparent;
+    border-right: 3px solid transparent;
+}
+.head_bar .head_nav > li>a:hover i{
+    border-top-color: #EB6100;
+    /*border-left: 4px solid transparent;*/
+    /*border-right: 3px solid transparent;*/
+}
+.car_edition ul{
+    background-color:#000 ;
+    opacity: 0.8;
+    height: 150px;
+    overflow: auto;
+}
+.car_edition ul li{
+    float:none;
+    padding: 0;
+}
+.car_edition ul li a{
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 10px;
+}
+.car_edition>ul>li>a:hover{
+    color: #EB6100;
+    background-color: transparent;
+    background-image: none;
+}
+.car_edition>ul>li>a{
+    text-align: center;
+}
+.car_edition>ul>li>a:hover i{
+    border-top-color: #EB6100;
+}
+/*主体*/
+/*左边*/
+/*车型库图片展示*/
+.lf_pic {
+    width: 865px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.lf_pic .carousel img {
+    margin-left: 19px;
+}
+
+.list {
+    width: 100px;
+    line-height: 30px;
+    background-color: #000;
+    opacity: 0.5;
+    float: right;
+    text-align: center;
+    height: 30px;
+    margin-right: 300px;
+}
+
+.list a {
+    color: #fff;
+}
+
+.left a:hover {
+    margin-left: 0;
+}
+
+.right b:hover {
+    margin-right: 0;
+}
+
+.carousel-control {
+    width: 19px;
+}
+
+.carousel {
+    background: url("../img/car_show_1.gif");
+}
+
+.carousel:hover {
+    cursor: e-resize;
+}
+
+/*车库图片*/
+.div1 {
+    width: 865px;
+    position: absolute;
+}
+
+.lf {
+    float: left;
+    width: 20px;
+    height: 535px;
+    background: #000;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.rg {
+    float: right;
+    width: 20px;
+    height: 535px;
+    background: #000;
+    position: absolute;
+    z-index: 2;
+    opacity: .5;
+    right: 0;
+}
+
+.div2 {
+    width: 865px;
+    overflow: hidden;
+    float: left;
+    height: 535px;
+    position: absolute
+}
+
+.div1 ul {
+    width: 4125px;
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    left: -805px;
+}
+
+.div1 ul li {
+    float: left;
+    width: 825px;
+    height: 535px;
+    background: #000000;
+    opacity: .5;
+}
+
+.div1 ul li.active {
+    opacity: 1;
+}
+
+/**/
+/*车型库图片列表展示*/
+.lf_pic .nav {
+    border: none;
+    margin: 5px 0;
+}
+
+.lf_pic .nav li {
+    margin-left: 10px;
+    color: #999;
+}
+
+.lf_pic .nav li a {
+    padding: 0;
+    border: 0;
+    color: #999;
+    font: 12px "微软雅黑";
+}
+
+.lf_pic .nav li a:hover, .lf_pic .nav li a:focus {
+    color: #EB6100;
+    background-color: transparent;
+}
+
+.lf_pic_pic {
+    width: 863px;
+    height: 500px;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.lf_pic_word {
+    width: 100%
+}
+
+/*小标签*/
+.container {
+    position: relative;
+}
+
+.lit_lable {
+    position: absolute;
+    left: 745px;
+    top: 40px;
+    width: 100px;
+    height: 30px;
+    background-color: #030303;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+.lit_lable a {
+    font: 14px "微软雅黑";
+    color: #fff;
+    line-height: 30px;
+}
+
+.lit_lable a:hover, .lit_lable a:focus {
+    color: #EB6100;
+    text-decoration: none;
+}
+
+/**/
+/*滚动条*/
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #080808;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #999;
+}
+
+/**/
+.lf_pic_pic ul li{
+    float: left;
+    margin-left: 17px;
+    margin-top: 10px;
+}
+.lf_pic_pic ul{
+    margin-left: -20px;
+    margin-top: -10px;
+}
+.lf_pic_pic ul li p {
+    margin: 5px 60px 0;
+    font: 14px "微软雅黑";
+    color: #999;
+}
+
+.lf_pic .img_lf {
+    margin-left: 10px;
+}
+
+.lf_pic .img_rg {
+    margin-right: 10px;
+}
+
+.lf_pic .lf_pic_pic ul li img{
+    width: 194px;
+    height: 145px;
+}
+
+.lf_pic .lf_pic_pic ul li:hover img {
+    border: 2px solid #EB6100;
+    display: block
+}
+
+/*右边*/
+.rg_word {
+    width: 135px;
+    margin: 0;
+    /*padding: 0 0 0 10px;*/
+    float: right;
+    background: #1e1e1e;
+    height: 535px;
+
+}
+
+.rg_word b:first-child {
+    background-color: #71370f;
+    width:3px;
+    height: 16px;
+    margin-top: 5px;
+    margin-left: 18px;
+    margin-right: 8px;
+}
+.rg_word b {
+    color: #666666;
+    font: 18px "微软雅黑";
+    float: left;
+}
+
+.rg_word .b_line {
+    color: #EB6100;
+}
+
+.rg_word ul li a {
+    /*padding: 10px 3px;*/
+    color: #cccccc;
+    /*width: 50%;*/
+    /*float: left*/
+    text-align: center;
+    font-size: 12px;
+}
+
+.rg_word ul li a:hover, .rg_word ul li a:focus {
+    color: #EB6100;
+    background-color: transparent;
+}
+
+.dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #ccc;
+    vertical-align: middle;
+    margin-right: 8px;
+    position: relative;
+    margin-top: -2px;
+}
+
+.rg_word ul li a:hover .dot, .rg_word ul li a:focus .dot {
+    background: #EB6100;
+}
+
+/*分割线*/
+.one_line {
+    width: 115px;
+    height: 1px;
+    background: #3d3d3d;
+    margin: 40px 0 25px 10px;
+}
+
+/**/
+.car_type {
+    color: #dddddd;
+    font: 12px "微软雅黑";
+    margin-bottom: 5px;
+    margin-left: 10px;
+    width: 125px;
+}
+
+.car_price {
+    margin-bottom: 20px;
+    margin-left:10px;
+    font: 12px "微软雅黑";
+}
+
+.car_price span {
+    color: #EB6100;
+
+}
+
+.car_label {
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #EB6100;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.car_label:hover {
+    cursor: pointer;
+    background: #ce5b0a;
+}
+
+
+

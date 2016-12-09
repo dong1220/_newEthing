@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html ang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>在售整车</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="css/car_home.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/details.css" />
+		<link rel="stylesheet" type="text/css" href="css/detailsV2.css" />
+		<link rel="stylesheet" type="text/css" href="css/pagerExtCss.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<!--start 顶部-->
+		<div class="head">
+			<div class="wrapper">
+				<span>易行网</span>
+				<span class="ml10">您的位置：</span>
+				<div class="btn_group">
+					<span class="select">北京</span><i class="icon_xia"></i>
+					<div class="city_mark">
+						<ul>
+							<li class="active">北京</li>
+							<li>上海</li>
+							<li>深圳</li>
+							<li>广州</li>
+							<li>石家庄</li>
+							<li>保定</li>
+							<li>邢台</li>
+							<li>邯郸</li>
+							<li>秦皇岛</li>
+							<li>济南</li>
+							<li>青岛</li>
+							<li>四平</li>
+							<li>张家口</li>
+							<li>南宁</li>
+							<li>桂林</li>
+							<li>昆明</li>
+							<li>开封</li>
+							<li>沈阳</li>
+							<li>厦门</li>
+							<li>厦门</li>
+							<li>香港</li>
+							<li>澳门</li>
+							<li>武汉</li>
+							<li>长沙</li>
+							<li>孝感</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+							<li>天津</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="ml20 nav1">
+					<li><a href="#2">易修</a></li>
+					<li>|</li>
+					<li><a href="#2">易购</a></li>
+					<li>|</li>
+					<li><a href="#2">易聚</a></li>
+					<li>|</li>
+					<li><a href="#2">文章</a></li>
+					<li>|</li>
+					<li><a href="#2">经销商</a></li>
+					<li>|</li>
+					<li><a href="#2">车型库</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="#2">登录</a></li>
+					<li><a href="#2">注册</a></li>
+					<li class="r-gou"><a href="#2">购物车</a><i class="gou">1</i></li>
+					<li><a href="#2">订单管理</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--end 顶部-->
+		<!--start logo-->
+		<div class="wrapper logo">
+	        <a href="http://www.ething.net">
+	            <img class="total_logo" src="img/logo.png" alt="">
+	        </a>
+	        <ul class="fl yj_nav">
+	            <li>
+	                <a class="current" href="/Product/CarList">汽车整车</a>
+	            </li>
+	            <li>
+	                <a class="" href="/Product/List/?ListTypeId=1">原厂专区</a>
+	            </li>
+	            <li>
+	                <a class="" href="/Product/List?ListTypeId=0">汽车用品</a>
+	            </li>
+	            <li>
+	                <a class="" href="/Product/List/?ListTypeId=2">巨惠卖场</a>
+	            </li>
+	        </ul>
+	        <div class="right">
+	            <a class="app"></a>
+	            <a class="code"></a>
+	            <p></p>
+	        </div>
+    	</div>
+		<!--end logo-->
+		<div class="wrapper">
+		    <div class="tiao mt5">
+		    <a target="_blank" href="/Ad/GoToAdUrl/99" title="暂无">
+		        <img src="img/img_article_h.jpg" alt="暂无" style="width: 1000px; height: 90px;">
+		    </a>
+		    </div>
+		</div>
+
+		<!-- start 条件选择 -->
+		<div class="wrapper">
+		    <div class="term to_r mt20">
+		        <div class="cap">
+		            <div class="shop_d_title mb10">
+		                <span>按条件选择</span>
+		                <div class="left">
+		                    <span id="brandname" style="display: none" cond="brandname"><i class="btn_g">X</i><a>品牌</a></span>
+		                     <span id="linename" style="display: none" cond="linename"><i class="btn_g">X</i><a></a></span>
+		                    <span id="cartype" style="display: none" cond="cartype"><i class="btn_g">X</i><a></a></span>
+		                    <span id="price" style="display: none" cond="price"><i class="btn_g">X</i><a></a></span>
+		                    <span id="volume" style="display: none" cond="volume"><i class="btn_g">X</i><a></a></span>
+		                    <span id="country" style="display: none" cond="country"><i class="btn_g">X</i><a></a></span>
+		                    <span id="manufacturer" style="display: none" cond="manufacturer"><i class="btn_g">X</i><a></a></span>
+		                    <span id="gearbox" style="display: none" cond="gearbox"><i class="btn_g">X</i><a></a></span>
+		                </div>
+		                <a class="clear_all">清除所有选项</a>
+		            </div>
+		            <p><span class="blue"></span><span class="dashed_left"></span><span class="dashed_right"></span></p>
+		            
+		        </div>
+		        <div class="cont">
+		        	<!-- start 字母品牌-->
+		            <div class="pin-title">
+		                <span>品牌：</span>
+		                <div class="letter fl" tabindex="5000" style="overflow: hidden; outline: none;">
+		                    <ul>
+		                        <li class="active"><a>A</a></li>
+		                        <li><a>B</a><i class="bottom_line"></i></li>
+		                        <li><a>C</a><i class="bottom_line"></i></li>
+		                        <li><a>D</a><i class="bottom_line"></i></li>
+		                        <li><a>F</a><i class="bottom_line"></i></li>
+		                        <li><a>G</a><i class="bottom_line"></i></li>
+		                        <li><a>H</a><i class="bottom_line"></i></li>
+		                       <!--   <li><a>I</a><i class="bottom_line"></i></li>-->
+		                        <li><a>G</a><i class="bottom_line"></i></li>
+		                        <li><a>K</a><i class="bottom_line"></i></li>
+		                        <li><a>L</a><i class="bottom_line"></i></li>
+		                        <li><a>M</a><i class="bottom_line"></i></li>
+		                        <li><a>N</a><i class="bottom_line"></i></li>
+		                        <li><a>O</a><i class="bottom_line"></i></li>
+		                        <li><a>P</a><i class="bottom_line"></i></li>
+		                        <li><a>Q</a><i class="bottom_line"></i></li>
+		                        <li><a>R</a><i class="bottom_line"></i></li>
+		                        <li><a>S</a><i class="bottom_line"></i></li>
+		                        <li><a>T</a><i class="bottom_line"></i></li>
+		                         <!--    <li><a>U</a><i class="bottom_line"></i></li>-->
+		                         <!--    <li><a>V</a><i class="bottom_line"></i></li>-->
+		                        <li><a>W</a><i class="bottom_line"></i></li>
+		                        <li><a>X</a><i class="bottom_line"></i></li>
+		                        <li><a>Y</a><i class="bottom_line"></i></li>
+		                        <li><a>Z</a><i class="bottom_line"></i></li>
+		                    </ul>
+		                    <div id="brandletter_brand">
+		                        <span><a>奥迪</a></span>
+		                        <span><a>宝马</a></span>
+		                        <span><a>奔驰</a></span>
+		                        <span><a>保时捷</a></span>
+		                        <span><a>比亚迪</a></span>
+		                        <span><a>别克</a></span>
+		                        <span><a>宝骏</a></span>
+		                        <span><a>宾利</a></span>
+		                        <span><a>保时捷</a></span>
+		                        <span><a>奥迪</a></span>
+		                        <span><a>宝马</a></span>
+		                        <span><a>比亚迪</a></span>
+		                        <span><a>别克</a></span>
+		                        <span><a>宝骏</a></span>
+		                        <span><a>宾利</a></span>
+		                    </div>
+		                </div> 
+		            </div>
+		        	<!-- end 字母品牌-->
+
+		        	<!-- start 车系 -->
+		        	<div class="pin-title chexi">
+		        		<span class="fl">车系:</span>
+		        		<div class="fl brand_series">
+		        			<dl>
+			        			<dt>一汽奥迪：</dt>
+			        			<dd>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        				<a>奥迪A8L</a>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        			</dd>
+		        			</dl>
+		        			<dl>
+			        			<dt>奥迪(进口)：</dt>
+			        			<dd>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        				<a>奥迪A8L</a>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        				<a>奥迪A8L</a>
+			        				<a>奥迪A4L</a>
+			        				<a>奥迪A6L</a>
+			        			</dd>
+		        			</dl>
+		        		</div>
+		        	</div>
+		        	<!-- end 车系 -->
+
+		        	<!-- start 车型 -->
+		        	<div class="pin-title chexi">
+		        		<span class="fl">车型:</span>
+		        		<div class="fl brand_model">
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        			<a>奥迪A4L 2017款 45TFSI 基本型</a>
+		        		</div>
+		        	</div>
+		        	<!-- end 车型 -->
+		        </div>
+		    </div>
+		</div>
+		<!-- end 条件选择 -->
+
+
+		<!-- end 在售整车 -->
+		<div class="wrapper">
+		    <div class="term to_r mt20">
+		        <div class="cap">
+		            <div class="shop_d_title mb10">
+		                <span>在售整车</span>
+		            </div>
+		            <p><span class="blue"></span><span class="dashed_left"></span><span class="dashed_right"></span></p>
+		        </div>
+		        <!-- start 车辆列表 -->
+		        <div class="cont">
+		        	<ul class="carList">
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+		        		<li>
+		        			<h4><a href="">奥迪A5  2016款  sportback  45  TFSI  </a></h4>
+		        			<p>
+		        				<span class="price">38.09万</span>
+		        				<span class="linethrong">45.88万</span>
+		        				<span class="reduce">7.79万</span>
+		        			</p>
+		        			<p>
+		        				<span>[4s店]</span>
+		        				<span>北京博瑞祥星奥迪</span>
+		        				<span>400-639-9973</span>
+		        			</p>
+		        		</li>
+
+		        		<center class="list_page">
+						     <!--jQuery Ajax Paging Start-->
+							<!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+							<div class="in_pages"><p><a disabled="disabled">首页</a></p><p><a disabled="disabled">上一页</a></p><p>1</p><p><a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#pagerList" href="/Product/CarListPartial?pageIndex=2">2</a></p><p><a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#pagerList" href="/Product/CarListPartial?pageIndex=3">3</a></p><p><a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#pagerList" href="/Product/CarListPartial?pageIndex=2">下一页</a></p><p><a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#pagerList" href="/Product/CarListPartial?pageIndex=3">尾页</a></p></div>
+							<!--MvcPager 1.5 for ASP.NET MVC 3.0 © 2009-2011 Webdiyer (http://www.webdiyer.com)-->
+						    <!--jQuery Ajax Paging End-->
+						 </center>
+		        	</ul>
+		        </div>
+		         <!-- end 车辆列表 -->
+		    </div>
+		</div>
+		 <!-- end 在售整车 -->
+
+		<!-- start 底部广告 -->
+		<div class="wrapper">
+		    <div class="tiao mt5 mb15">
+		    <a target="_blank" href="/Ad/GoToAdUrl/100" title="暂无">
+		        <img src="http://ethingsadimg.oss-cn-qingdao.aliyuncs.com/f015bc61edba4bbdb57e13d30e85ea51.jpg" alt="暂无" style="width: 1000px; height: 90px;">
+		    </a>
+
+		    </div>
+		</div>
+		 <!-- end  底部广告 -->
+
+		 <!--start footer -->
+		<div class="footer">
+			<div class="wrapper">
+				<ul class="active">
+					<li><a href="#2">关于我们</a></li>
+					<li><a href="#2">加入我们</a></li>
+					<li><a href="#2">关注我们</a></li>
+					<li><a href="#2">帮助中心</a></li>
+					<li><a href="#2">网站条款</a></li>
+				</ul>
+				<ul>
+					<li><a href="#2">关于易行</a></li>
+					<li><a href="#2">加入易行</a></li>
+					<li><a href="#2">易行微信</a></li>
+					<li><a href="#2">用户体验中心</a></li>
+					<li><a href="#2">法律声明</a></li>
+				</ul>
+				<ul>
+					<li><a href="#2">会员手册</a></li>
+					<li><a href="#2">易行招聘</a></li>
+					<li><a href="#2">联系我们</a></li>
+					<li><a href="#2">在线咨询</a></li>
+					<li><a href="#2">服务协议</a></li>
+				</ul>
+				<p>版权所有：北京易行互动科技有限公司 电话：010-85072077 　© 2016 www.ething.net 京ICP证150082号 公网安备 11010802020186号<i class="icon_gaj"></i></p>
+			</div>
+		</div>
+		<!--end footer -->
+
+		<!--start 浮动二维码 -->
+		<div class="fixCode">
+			<img src="img/code_down.jpg" width="160" height="193"/>
+		</div>
+		<!--end 浮动二维码 -->
+
+		<script type="text/javascript">
+			 $(".letter li").each(function (i, v) {
+		        var mWidth = i * 23;
+		        $(this).find(".bottom_line").css({
+		            "width": mWidth + "px",
+		            "left": -mWidth + 5 + "px"
+		        });
+		    });
+			$(".letter li").click(function () {
+		        $(this).addClass("active").siblings().removeClass("active");
+		    });
+		</script>
+	</body>
+</html>
